@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contanier
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./image/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card_box{
+  height: 400px;
+  width: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+	perspective: 1000px;
+}
+.card_box .card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+  5px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.card_box:hover > .front{
+  transform: rotateY(-180deg);
+}
+.card_box .card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card_box .back
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.card_box:hover > .back{
+  transform: rotateY(0deg);
+}
+.card_box .back img{
+  height: 180px;
+  width: 180px;
+  padding: 5px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cd061, #1cd01c);
+}
+.card_box .back .info{
+  text-align: center;
+}
+.title{
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ff0047;
+}
+#work_desc{
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: black;
+  padding-top: 10px;
+}
+.back ul{
+  display: flex;
+}
+.back ul a{
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cd061, #1cd01c);
+  transition: all 0.5s ease;
+}
+.back ul a:hover{
+  color: #1cd01c;
+  border-color: #1cd01c;
+  background: linear-gradient(375deg, transparent, transparent);
+}
